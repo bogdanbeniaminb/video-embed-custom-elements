@@ -1,0 +1,39 @@
+{
+  "name": "video-embed-custom-elements",
+  "version": "1.0.0",
+  "description": "Custom Elements (Web Components) for video embeds",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@vimeo/player": "^2.10.0",
+    "lit-element": "^2.3.1",
+    "lit-scss-loader": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.8.3",
+    "@babel/plugin-proposal-optional-chaining": "^7.9.0",
+    "@babel/plugin-proposal-private-methods": "^7.8.3",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "extract-loader": "^5.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bogdanbeniaminb/video-embed-custom-elements.git"
+  },
+  "keywords": [
+    "Custom Elements",
+    "Web Components",
+    "Youtube",
+    "Vimeo",
+    "Video Embed"
+  ],
+  "author": "Bogdan-Beniamin Barbu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bogdanbeniaminb/video-embed-custom-elements/issues"
+  },
+  "homepage": "https://github.com/bogdanbeniaminb/video-embed-custom-elements#readme"
+}
