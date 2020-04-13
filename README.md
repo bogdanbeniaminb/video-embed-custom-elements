@@ -98,6 +98,45 @@ Or, to loop the same youtube video:
 ```html
 <youtube-embed
   id="6v2L2UGZJAM"
-  params='{"playlist": "6v2L2UGZJAM"}'
+  params='{"loop": 1, "playlist": "6v2L2UGZJAM"}'
 ></youtube-embed>
+```
+
+## Some usage examples
+
+These components can be helpful for tabs/sliders with videos, when you want to pause the video in the current slide before going to the next.
+
+For example, for Foundation Tabs:
+
+```js
+$('[data-tabs]').on('change.zf.tabs', function (e, target, targetContent) {
+  // get the [data-tabs-content] element (which is outside the [data-tabs] element)
+  const id = this.id;
+  const tabsContent = document.querySelector(`[data-tabs-content="${id}"]`);
+
+  // stop videos and audios
+  const medias = tabsContent.querySelectorAll(
+    'youtube-embed,vimeo-embed,video-embed,video,audio'
+  );
+  [].forEach.call(medias, media => media.pause());
+});
+```
+
+Or, for Slick-slider:
+
+```js
+// stop videos and audios
+$('.your-element').on('beforeChange', function (
+  event,
+  slider,
+  currentSlide,
+  nextSlide
+) {
+  const $currentSlide = slider.$slides.get(currentSlide);
+  const currentSlideEl = $currentSlide[0]; // get the DOM element (not jQuery)
+  const medias = currentSlideEl.querySelectorAll(
+    'youtube-embed,vimeo-embed,video-embed,video,audio'
+  );
+  [].forEach.call(medias, media => media.pause());
+});
 ```
