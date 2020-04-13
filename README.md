@@ -39,8 +39,8 @@ rules: [
 In the HTML markup, you can then use:
 
 ```html
-<youtube-embed id="6v2L2UGZJAM"></youtube-embed>
-<vimeo-embed id="67449472"></vimeo-embed>
+<youtube-embed videoId="6v2L2UGZJAM"></youtube-embed>
+<vimeo-embed videoId="67449472"></vimeo-embed>
 ```
 
 ## JavaScript API
@@ -67,7 +67,7 @@ You can also directly use attributes on the elements.
 For example, use "opened muted" to autoplay the video (muted is required for to bypass browser autoplay restrictions):
 
 ```html
-<vimeo-embed id="67449472" opened muted></vimeo-embed>
+<vimeo-embed videoId="67449472" opened muted></vimeo-embed>
 ```
 
 ## Extra parameters
@@ -82,7 +82,7 @@ $params = [
   'playlist' => $id,
 ];
 ?>
-<youtube-embed id="<?php echo esc_attr($id); ?>" params="<?php echo esc_attr(
+<youtube-embed videoId="<?php echo esc_attr($id); ?>" params="<?php echo esc_attr(
   json_encode($params)
 ); ?>"></youtube-embed>
 ```
@@ -90,14 +90,14 @@ $params = [
 For example, to specify "Do Not Track" for vimeo videos:
 
 ```html
-<vimeo-embed id="67449472" params='{"dnt": true}'></vimeo-embed>
+<vimeo-embed videoId="67449472" params='{"dnt": true}'></vimeo-embed>
 ```
 
 Or, to loop the same youtube video:
 
 ```html
 <youtube-embed
-  id="6v2L2UGZJAM"
+  videoId="6v2L2UGZJAM"
   params='{"loop": 1, "playlist": "6v2L2UGZJAM"}'
 ></youtube-embed>
 ```

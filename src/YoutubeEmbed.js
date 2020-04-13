@@ -49,7 +49,7 @@ class YoutubeEmbed extends VideoEmbed {
 
   getThumbnailStructure() {
     return `https://i.ytimg.com/vi${this.supportsWebP ? '_webp' : ''}/${
-      this.id
+      this.videoId
     }/maxresdefault.${this.supportsWebP ? 'webp' : 'jpg'}`;
   }
 
@@ -69,7 +69,7 @@ class YoutubeEmbed extends VideoEmbed {
       async size => {
         const url = `https://i.ytimg.com/vi${
           this.supportsWebP ? '_webp' : ''
-        }/${this.id}/${size}.${this.supportsWebP ? 'webp' : 'jpg'}`;
+        }/${this.videoId}/${size}.${this.supportsWebP ? 'webp' : 'jpg'}`;
         try {
           await this.constructor.loadImagePromise(url);
           foundSize = size;
@@ -165,7 +165,7 @@ class YoutubeEmbed extends VideoEmbed {
       ...this.params,
     };
     const iframeURL = `
-      https://www.youtube-nocookie.com/embed/${this.id}`,
+      https://www.youtube-nocookie.com/embed/${this.videoId}`,
       iframeURLObject = new URL(iframeURL);
     if (params) {
       Object.keys(params).forEach(key => {
@@ -180,7 +180,7 @@ class YoutubeEmbed extends VideoEmbed {
               :host {
                 background-image: url(https://i.ytimg.com/vi${this.supportsWebP
                     ? '_webp'
-                    : ''}/${this.id}/${this.thumbSize}.${this.supportsWebP
+                    : ''}/${this.videoId}/${this.thumbSize}.${this.supportsWebP
                     ? 'webp'
                     : 'jpg'});
               }

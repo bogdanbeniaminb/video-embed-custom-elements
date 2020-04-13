@@ -27,7 +27,7 @@ export class VideoEmbed extends LitElement {
 
   static get properties() {
     return {
-      id: {
+      videoId: {
         type: String,
       },
       opened: {
@@ -260,13 +260,13 @@ export class VideoEmbed extends LitElement {
     if (
       'ShadyCSS' in window &&
       (changedProperties.has('thumbSize') ||
-        (changedProperties.has('id') && changedProperties.get('id')))
+        (changedProperties.has('videoId') && changedProperties.get('videoId')))
     ) {
       this.style.backgroundImage = `url(${this.getThumbnailStructure()})`;
     }
 
     // reinitialize the iframe etc
-    if (changedProperties.has('id') && changedProperties.get('id')) {
+    if (changedProperties.has('videoId') && changedProperties.get('videoId')) {
       this.getThumbSize()
         .then(size => {
           this.thumbSize = size;

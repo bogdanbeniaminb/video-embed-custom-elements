@@ -45,7 +45,7 @@ class VimeoEmbed extends VideoEmbed {
 
   /** get the thumbnail size */
   async getThumbSize() {
-    fetch(`https://vimeo.com/api/v2/video/${this.id}.json`)
+    fetch(`https://vimeo.com/api/v2/video/${this.videoId}.json`)
       .then(response => response.json())
       .then(response => response[0])
       .then(async response => {
@@ -147,7 +147,7 @@ class VimeoEmbed extends VideoEmbed {
       ...this.params,
     };
     const iframeURL = `
-      https://player.vimeo.com/video/${this.id}`,
+      https://player.vimeo.com/video/${this.videoId}`,
       iframeURLObject = new URL(iframeURL);
     if (params) {
       Object.keys(params).forEach(key => {
